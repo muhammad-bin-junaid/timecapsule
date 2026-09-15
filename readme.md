@@ -4,6 +4,9 @@ Time Capsule is a custom new-tab workspace built around the idea of keeping your
 
 It combines a personal dashboard, productivity tools, and a small simulated browser into one interface.
 
+
+![Time Capsule Preview](PREIVEIW.png)
+
 ## Features
 
 - Live clock and date

@@ -1,105 +1,51 @@
 # Time Capsule
 
-Time Capsule is a custom new-tab workspace built around the idea of keeping your important things in one place while also letting you save messages for the future.
-
-It combines a personal dashboard, productivity tools, and a small simulated browser into one interface.
-
+i made a new tab page. i got tired of the default chrome new tab so i thought why not make my own. it has a clock, tasks, quick links, and my favorite part - time capsules where you can leave messages for your future self.
 
 ![Time Capsule Preview](PREIVEIW.png)
 
-## Features
+## what it does
 
-- Live clock and date
-- Custom search
-- Quick links
-- Productivity checklist
-- Time capsules with unlock dates
-- LocalStorage persistence
-- Custom quick links
-- Theme settings
-- Browser-style tabs
-- New tab button
-- Internal browser pages
-- Simulated pages for GitHub, YouTube, Hack Club, and Vercel
-- Simulated search results
-- Responsive layout
+- big clock and date at the top
+- search bar that opens fake results in a tab
+- quick links to github, youtube, hack club, vercel (and you can add your own)
+- a task list for keeping track of stuff you need to do
+- time capsules - write a message, set a future date, and it locks until then
+- dark/light theme toggle
+- everything saves to localStorage so its still there when you come back
 
-## Time Capsules
+## time capsules
 
-The main feature is the time capsule system.
+this is the main thing i wanted to build. you write a message, pick a date in the future, and seal it. it shows up as "sealed" on the dashboard and you cant open it until the date arrives. once it unlocks you can click it to read what you wrote. its kinda cool seeing old messages from past you.
 
-You can create a capsule with:
+i store everything in localStorage so nothing gets lost. the page checks every second if any capsules have unlocked.
 
-- A title
-- A message
-- An unlock date and time
+## the fake browser thing
 
-Locked capsules stay unavailable until their unlock time.
+when you click on the quick links they dont take you to the real website. instead they open in a little browser i built inside the page. it has tabs and everything.
 
-Once unlocked, the message can be opened from the dashboard.
+you can open github, youtube, hack club, and vercel as fake pages. they look similar to the real thing but theyre just simplified versions made with html and css. you can also open new tabs and search from inside them.
 
-Capsules are stored locally using `localStorage`, so they remain available after refreshing the page.
+i did this because i wanted the links to feel integrated into the app instead of just being shortcuts that take you away.
 
-## Simulated Browser
+## how i built it
 
-Time Capsule also includes a small browser-style environment.
+just html, css, and javascript. no frameworks no build tools nothing. i wanted to keep it simple and learn vanilla js properly.
 
-The quick links do not simply send you away from the project. Instead, they open internal tabs containing simplified preview pages.
+- the clock uses setInterval to update every second
+- tasks and capsules are stored in localStorage as JSON
+- the browser tab system manages its own state with an object that tracks each tab
+- the fake pages are just big html strings that get injected into the page
+- themes work by swapping CSS custom properties with javascript
 
-The browser simulation includes:
+## what was tricky
 
-- GitHub preview
-- YouTube preview
-- Hack Club preview
-- Vercel preview
-- Fake search results
-- Multiple tabs
-- Tab switching
-- New tabs
-- Returning to the homepage
+the hardest part was the browser tab system. getting tabs to open, close, switch between them, and go back to home took a lot of trial and error. the fake search was also fun - it just generates some fake results based on whatever you type.
 
-The pages are intentionally simplified simulations rather than copies of the real websites.
+making it responsive was a pain too. the browser pages look really different on mobile so i had to hide sidebars and rearrange things for smaller screens.
 
-## Technologies
+## built for
 
-- HTML
-- CSS
-- JavaScript
-- LocalStorage
-
-No framework or backend is required.
-
-## Design
-
-I wanted Time Capsule to feel more like a personal desktop/browser environment than a normal productivity dashboard.
-
-The interface uses:
-
-- Dark UI
-- Large typography
-- Monospace elements
-- Browser-style tabs
-- Minimal cards
-- Subtle animations
-- Responsive layouts
-
-## What I Learned
-
-While building Time Capsule, I worked with:
-
-- LocalStorage
-- Dynamic DOM rendering
-- Modals
-- Browser-style tab systems
-- State management in JavaScript
-- Dynamic search results
-- Responsive CSS
-- Building multiple UI states inside one page
-
-One of the more interesting parts was figuring out how to make the quick links feel like they were opening websites without actually embedding or copying the real websites.
-
-## Project
-
-Built for Hack Club Stardance.
+Hack Club Stardance
 
 [Live Demo](https://timecapsule-rho.vercel.app/)

@@ -22,7 +22,7 @@ if(tasks.length===0){var empty=document.createElement("p");empty.textContent="No
 tasks.forEach(task=>{
 var el=document.createElement("div");el.className="task"
 if(task.completed)el.classList.add("completed")
-el.innerHTML='<input type="checkbox" class="task-checkbox" '+(task.completed?"checked":")+">"+"<span>"+escapeHTML(task.text)+"</span>"+'<button class="delete-task">&times;</button>'
+el.innerHTML='<input type="checkbox" class="task-checkbox" '+(task.completed?"checked":"")+">"+"<span>"+escapeHTML(task.text)+"</span>"+'<button class="delete-task">&times;</button>'
 el.querySelector(".task-checkbox").addEventListener("change",function(){task.completed=this.checked;saveTasks();renderTasks()})
 el.querySelector(".delete-task").addEventListener("click",function(){tasks=tasks.filter(function(item){return item.id!==task.id});saveTasks();renderTasks()})
 taskList.appendChild(el)

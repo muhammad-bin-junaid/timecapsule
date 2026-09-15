@@ -102,4 +102,4 @@ One of the more interesting parts was figuring out how to make the quick links f
 
 Built for Hack Club Stardance.
 
-[Live Demo](https://time-capsule-4z5.pages.dev/)
+[Live Demo](https://timecapsule-rho.vercel.app/)

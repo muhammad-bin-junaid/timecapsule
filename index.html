@@ -1,170 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Time Capsule — New Tab</title>
-    <meta name="description" content="A custom new tab for focus, productivity and messages to your future self.">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Capsule — New Tab</title>
+<meta name="description" content="A custom new tab for focus, productivity and messages to your future self.">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <main class="app">
-
-        <header class="header">
-            <a href="#" class="logo" id="homeBtn">TIME CAPSULE</a>
-
-            <div class="header-actions">
-                <button class="settings-btn" id="settingsBtn">
-                    Settings
-                </button>
-            </div>
-        </header>
-
-        <div class="browser-tabs" id="browserTabs">
-            <button class="browser-tab active" data-tab="home">
-                <span>Home</span>
-            </button>
-            <button class="new-tab-btn" id="newTabBtn">+</button>
-        </div>
-
-        <div class="page active-page" id="homePage">
-
-            <section class="time-section">
-                <p id="date">Monday, September 15</p>
-                <h1 id="clock">00:00</h1>
-            </section>
-
-            <section class="search-section">
-                <form id="searchForm">
-                    <span class="search-icon">⌕</span>
-                    <input type="text" id="searchInput" placeholder="Search the web..." autocomplete="off">
-                    <button type="submit">Enter</button>
-                </form>
-            </section>
-
-            <section class="links-section">
-                <div class="section-heading">
-                    <p class="eyebrow">Quick links</p>
-                    <button id="addLinkBtn">+</button>
-                </div>
-
-                <div class="quick-links" id="quickLinks">
-                    <a class="link-card" href="https://github.com" target="_self">
-                        <div class="link-icon github-icon">GH</div>
-                        <strong>GitHub</strong>
-                        <span>Code & repositories</span>
-                    </a>
-                    <a class="link-card" href="https://youtube.com" target="_self">
-                        <div class="link-icon youtube-icon">▶</div>
-                        <strong>YouTube</strong>
-                        <span>Watch videos</span>
-                    </a>
-                    <a class="link-card" href="https://hackclub.com" target="_self">
-                        <div class="link-icon hackclub-icon">HC</div>
-                        <strong>Hack Club</strong>
-                        <span>Build & ship</span>
-                    </a>
-                    <a class="link-card" href="https://vercel.com" target="_self">
-                        <div class="link-icon vercel-icon">▲</div>
-                        <strong>Vercel</strong>
-                        <span>Deploy projects</span>
-                    </a>
-                </div>
-            </section>
-
-            <section class="productivity-section">
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow">Today's productivity</p>
-                        <h2>Get things done.</h2>
-                    </div>
-                    <span id="taskCount">0 / 0</span>
-                </div>
-
-                <div class="task-input">
-                    <input type="text" id="taskInput" placeholder="Add a task...">
-                    <button id="addTaskBtn">+</button>
-                </div>
-
-                <div class="task-list" id="taskList"></div>
-            </section>
-
-            <section class="capsules-section">
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow">Your capsules</p>
-                        <h2>Messages for future you.</h2>
-                    </div>
-                    <button id="newCapsuleBtn">+ New</button>
-                </div>
-                <div class="capsule-list" id="capsuleList"></div>
-            </section>
-
-        </div>
-
-        <div class="page internal-page" id="internalPage">
-            <div class="internal-header">
-                <button id="backHomeBtn">← Home</button>
-                <span id="internalTitle">New Tab</span>
-            </div>
-            <div class="internal-content" id="internalContent">
-                <p>Select an internal tab to continue.</p>
-            </div>
-        </div>
-
-        <div class="modal hidden" id="capsuleModal">
-            <div class="modal-content">
-                <button class="modal-close" id="closeCapsuleModal">×</button>
-                <p class="eyebrow">New time capsule</p>
-                <h2>Leave something for future you.</h2>
-                <textarea id="messageInput" placeholder="Write your message..." maxlength="300"></textarea>
-                <label for="unlockDate">Unlock date & time</label>
-                <input type="datetime-local" id="unlockDate">
-                <button id="sealBtn">Seal capsule</button>
-            </div>
-        </div>
-
-        <div class="modal hidden" id="messageModal">
-            <div class="modal-content">
-                <button class="modal-close" id="closeMessageModal">×</button>
-                <p class="eyebrow">Capsule unlocked</p>
-                <blockquote id="unlockedMessage"></blockquote>
-                <button id="deleteCapsuleBtn">Delete capsule</button>
-            </div>
-        </div>
-
-        <aside class="settings-panel hidden" id="settingsPanel">
-            <div class="settings-header">
-                <h2>Settings</h2>
-                <button id="closeSettingsBtn">×</button>
-            </div>
-            <label for="themeSelect">
-                Appearance
-                <select id="themeSelect">
-                    <option value="dark">Dark</option>
-                    <option value="light">Light</option>
-                </select>
-            </label>
-        </aside>
-
-        <div class="modal hidden" id="linkModal">
-            <div class="modal-content">
-                <button class="modal-close" id="closeLinkModal">×</button>
-                <p class="eyebrow">Quick link</p>
-                <h2>Add a website.</h2>
-                <input type="text" id="linkName" placeholder="Website name">
-                <input type="url" id="linkUrl" placeholder="https://example.com">
-                <button id="saveLinkBtn">Add link</button>
-            </div>
-        </div>
-
-    </main>
-
-    <script src="script.js"></script>
-
+<main class="app">
+<header class="header">
+<a href="#" class="logo" id="homeBtn">TIME CAPSULE</a>
+<div class="header-actions"><button class="settings-btn" id="settingsBtn">Settings</button></div>
+</header>
+<div class="browser-tabs" id="browserTabs">
+<button class="browser-tab active" data-tab="home"><span>Home</span></button>
+<button class="new-tab-btn" id="newTabBtn">+</button>
+</div>
+<div class="page active-page" id="homePage">
+<section class="time-section">
+<p id="date">Monday, September 15</p>
+<h1 id="clock">00:00</h1>
+</section>
+<section class="search-section">
+<form id="searchForm">
+<span class="search-icon">⌕</span>
+<input type="text" id="searchInput" placeholder="Search the web..." autocomplete="off">
+<button type="submit">Enter</button>
+</form>
+</section>
+<section class="links-section">
+<div class="section-heading">
+<p class="eyebrow">Quick links</p>
+<button id="addLinkBtn">+</button>
+</div>
+<div class="quick-links" id="quickLinks">
+<a class="link-card" href="https://github.com" target="_self">
+<div class="link-icon github-icon">GH</div>
+<strong>GitHub</strong>
+<span>Code & repositories</span>
+</a>
+<a class="link-card" href="https://youtube.com" target="_self">
+<div class="link-icon youtube-icon">▶</div>
+<strong>YouTube</strong>
+<span>Watch videos</span>
+</a>
+<a class="link-card" href="https://hackclub.com" target="_self">
+<div class="link-icon hackclub-icon">HC</div>
+<strong>Hack Club</strong>
+<span>Build & ship</span>
+</a>
+<a class="link-card" href="https://vercel.com" target="_self">
+<div class="link-icon vercel-icon">▲</div>
+<strong>Vercel</strong>
+<span>Deploy projects</span>
+</a>
+</div>
+</section>
+<section class="productivity-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">Today's productivity</p>
+<h2>Get things done.</h2>
+</div>
+<span id="taskCount">0 / 0</span>
+</div>
+<div class="task-input">
+<input type="text" id="taskInput" placeholder="Add a task...">
+<button id="addTaskBtn">+</button>
+</div>
+<div class="task-list" id="taskList"></div>
+</section>
+<section class="capsules-section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">Your capsules</p>
+<h2>Messages for future you.</h2>
+</div>
+<button id="newCapsuleBtn">+ New</button>
+</div>
+<div class="capsule-list" id="capsuleList"></div>
+</section>
+</div>
+<div class="page internal-page" id="internalPage">
+<div class="internal-header">
+<button id="backHomeBtn">← Home</button>
+<span id="internalTitle">New Tab</span>
+</div>
+<div class="internal-content" id="internalContent">
+<p>Select an internal tab to continue.</p>
+</div>
+</div>
+<div class="modal hidden" id="capsuleModal">
+<div class="modal-content">
+<button class="modal-close" id="closeCapsuleModal">×</button>
+<p class="eyebrow">New time capsule</p>
+<h2>Leave something for future you.</h2>
+<textarea id="messageInput" placeholder="Write your message..." maxlength="300"></textarea>
+<label for="unlockDate">Unlock date & time</label>
+<input type="datetime-local" id="unlockDate">
+<button id="sealBtn">Seal capsule</button>
+</div>
+</div>
+<div class="modal hidden" id="messageModal">
+<div class="modal-content">
+<button class="modal-close" id="closeMessageModal">×</button>
+<p class="eyebrow">Capsule unlocked</p>
+<blockquote id="unlockedMessage"></blockquote>
+<button id="deleteCapsuleBtn">Delete capsule</button>
+</div>
+</div>
+<aside class="settings-panel hidden" id="settingsPanel">
+<div class="settings-header">
+<h2>Settings</h2>
+<button id="closeSettingsBtn">×</button>
+</div>
+<label for="themeSelect">Appearance
+<select id="themeSelect">
+<option value="dark">Dark</option>
+<option value="light">Light</option>
+</select>
+</label>
+</aside>
+<div class="modal hidden" id="linkModal">
+<div class="modal-content">
+<button class="modal-close" id="closeLinkModal">×</button>
+<p class="eyebrow">Quick link</p>
+<h2>Add a website.</h2>
+<input type="text" id="linkName" placeholder="Website name">
+<input type="url" id="linkUrl" placeholder="https://example.com">
+<button id="saveLinkBtn">Add link</button>
+</div>
+</div>
+</main>
+<script src="script.js"></script>
 </body>
 </html>

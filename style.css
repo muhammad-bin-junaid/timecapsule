@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
-
-:root{--bg:#111;--surface:#1a1a1a;--surface-hover:#222;--border:#333;--text:#ddd;--muted:#777;--accent:#d8ff65;--danger:#ff7676;--radius:4px}
-
 *{box-sizing:border-box;margin:0;padding:0}
 
-body{min-height:100vh;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;overflow-x:hidden}
+body{min-height:100vh;background:#111;color:#ddd;font-family:Arial,sans-serif;overflow-x:hidden}
+
+body.light{background:#eee;color:#222}
 
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
@@ -46,7 +44,7 @@ a{color:inherit;text-decoration:none}
 .quick-links{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .link-card{min-height:80px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #444;background:#1a1a1a}
 .link-card:hover{background:#222}
-.link-icon{width:30px;height:30px;display:grid;place-items:center;border:1px solid #444;background:#222;font-family:monospace;font-size:11px}
+.link-icon{width:30px;height:30px;display:grid;place-items:center;border:1px solid #444;background:#222;font-family:monospace;font-size:11px;overflow:hidden}
 .link-card strong{font-size:12px;margin-top:8px}
 
 .productivity-section{padding:12px;border:1px solid #444;background:#1a1a1a}
@@ -102,3 +100,48 @@ select{background:#1a1a1a;color:#ddd;border:1px solid #444;padding:5px;outline:n
 
 @media(max-width:800px){.quick-links{grid-template-columns:repeat(2,1fr)}.capsule-list{grid-template-columns:1fr 1fr}}
 @media(max-width:550px){.app{width:calc(100% - 16px)}.time-section{margin-top:40px}.quick-links{grid-template-columns:1fr 1fr}.capsule-list{grid-template-columns:1fr}#searchForm button{display:none}}
+
+body.light .settings-btn{border-color:#ccc;background:#ddd;color:#555}
+body.light .browser-tab{color:#888}
+body.light .browser-tab.active{background:#ddd;border-color:#ccc;color:#222}
+body.light .new-tab-btn{color:#555}
+body.light .time-section p{color:#888}
+body.light #searchForm{border-color:#ccc;background:#ddd}
+body.light #searchInput{color:#222}
+body.light #searchInput::placeholder{color:#999}
+body.light .search-icon{color:#888}
+body.light #searchForm button{color:#fff}
+body.light .section-heading>button,body.light #addLinkBtn{border-color:#ccc;background:#ddd;color:#555}
+body.light .link-card{border-color:#ccc;background:#ddd}
+body.light .link-card:hover{background:#ccc}
+body.light .link-icon{border-color:#ccc;background:#ddd}
+body.light .productivity-section{border-color:#ccc;background:#ddd}
+body.light .task-input input{border-color:#ccc;background:#eee;color:#222}
+body.light .task{border-color:#ccc}
+body.light .task-checkbox{accent-color:#667d00}
+body.light .delete-task{color:#888}
+body.light .capsule-card{border-color:#ccc;background:#ddd}
+body.light .capsule-card:hover{background:#ccc}
+body.light .capsule-card p{color:#666}
+body.light .capsule-status{color:#667d00}
+body.light .eyebrow{color:#667d00}
+body.light .internal-header{border-color:#ccc}
+body.light .internal-header button{border-color:#ccc;background:#ddd;color:#555}
+body.light .modal{background:rgba(0,0,0,0.3)}
+body.light .modal-content{border-color:#ccc;background:#eee}
+body.light .modal-close{color:#888}
+body.light .modal-content textarea,body.light .modal-content input{border-color:#ccc;background:#eee;color:#222}
+body.light .modal-content button:not(.modal-close){color:#fff}
+body.light .settings-panel{border-color:#ccc;background:#eee}
+body.light #closeSettingsBtn{color:#888}
+body.light .settings-panel label{color:#888}
+body.light select{background:#eee;color:#222;border-color:#ccc}
+body.light .fake-browser-home h1{color:#222}
+body.light .fake-browser-search input{border-color:#ccc;background:#eee;color:#222}
+body.light .fake-browser-search button{color:#fff}
+body.light .browser-suggestions button{border-color:#ccc;background:#ddd;color:#555}
+body.light .fake-search-bar input{border-color:#ccc;background:#eee;color:#222}
+body.light .fake-search-bar button{color:#fff}
+body.light .search-result{border-color:#ccc;background:#ddd}
+body.light .search-result h2{color:#667d00}
+body.light .search-result small,body.light .search-result p{color:#666}
